@@ -79,9 +79,9 @@
         // Compute a unique index for each country.
         data.forEach(function(d) {
             if (countryByName.has(d.orig)) d.orig = countryByName.get(d.orig);
-            else countryByName.set(d.orig, d.orig = {name: d.orig, index: ++countryIndex});
+            else countryByName.set(d.orig, d.orig = {name: d.orig, index: ++countryIndex, fillcolor: chroma.scale('Set2').colors(50)[++countryIndex]});
             if (countryByName.has(d.dest)) d.dest = countryByName.get(d.dest);
-            else countryByName.set(d.dest, d.dest = {name: d.dest, index: ++countryIndex});
+            else countryByName.set(d.dest, d.dest = {name: d.dest, index: ++countryIndex, fillcolor: chroma.scale('Set2').colors(50)[++countryIndex]});
             d.dest.fillcolor = d.fillcolor;
         });
 
@@ -130,7 +130,10 @@
 
             // Add the group arc.
             g.append("path")
-                .style("fill", function(d) { return d.source.value.fillcolor; })
+                .style("fill", function(d) {
+                    //return d.source.value.fillcolor;
+                    return 1;
+                })
                 .attr("id", function(d, i) { return "group" + d.index + "-" + j; })
                 .attr("d", arc)
                 .append("title")
