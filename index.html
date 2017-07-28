@@ -49,7 +49,7 @@
         .append("g")
         .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-    d3.json("assets/philantrophists.json", function(error, items) {
+    d3.json("assets/philantrophists3.json", function(error, items) {
         if (error) throw error;
 
         var indexByName = d3.map(),
@@ -130,7 +130,8 @@
             .data(chord.groups)
             .enter().append("g")
             .attr("class", "group")
-            .on("mouseover", mouseover);
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
 
         g.append("path")
             .style("fill", function(d) { return fill(d.index); })
@@ -176,6 +177,13 @@
                 return p.source.index !== i
                     && p.target.index !== i;
             });}
+
+        function mouseout(d, i) {
+
+            chords.classed("fade", false);
+
+        }
+
     });
 
     d3.select(self.frameElement).style("height", outerRadius * 2 + "px");
