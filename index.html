@@ -23,6 +23,12 @@
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
+
+    var fistLetterUpper = function(str) {
+        str = str.toLowerCase();
+        return str.charAt(0).toUpperCase()+str.slice(1);
+    };
+
     var outerRadius = 960 / 2,
         innerRadius = outerRadius - 130;
 
@@ -107,7 +113,7 @@
             }
         });
 
-        // Construct a square matrix counting package imports.
+        // Construct  a square matrix counting package imports.
         provinces.forEach(function(d) {
             var source = indexByName.get(name(d.name)),
                 row = matrix[source];
@@ -140,7 +146,7 @@
                     + (d.angle > Math.PI ? "rotate(180)" : "");
             })
             .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
-            .text(function(d) { return nameByIndex.get(d.index); });
+            .text(function(d) { return fistLetterUpper(nameByIndex.get(d.index)); });
 
         var chords = svg.selectAll(".chord")
             .data(chord.chords)
@@ -161,7 +167,7 @@
                     }
 
                 });
-                return "Net Donation from " + provinces[d.source.index].name + " to " + provinces[d.target.index].name + " is ￥" + amount.toString() + "M RMB.";
+                return fistLetterUpper(provinces[d.source.index].name) + " to " + fistLetterUpper(provinces[d.target.index].name) + ": " + amount.toString() + " million";
             });
 
         function mouseover(d, i) {
@@ -169,7 +175,6 @@
                 return p.source.index !== i
                     && p.target.index !== i;
             });}
-
     });
 
     d3.select(self.frameElement).style("height", outerRadius * 2 + "px");
