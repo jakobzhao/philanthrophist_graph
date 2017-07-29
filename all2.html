@@ -50,7 +50,7 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<div id="title"  align="center" >Unspecified</div>
+<div id="title"  align="center" >All</div>
 <div id="chart"  align="center" ></div>
 <div id="logo"><img src="assets/ash-logo.png"/>
 </div>
@@ -83,7 +83,7 @@
         .append("g")
         .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-    d3.json("assets/unspecified.json", function(error, items) {
+    d3.json("assets/all.json", function(error, items) {
         if (error) throw error;
 
         var indexByName = d3.map(),
@@ -143,6 +143,8 @@
 
 
         });
+
+
 
         // Compute a unique index for each package name.
         provinces.forEach(function(d) {

@@ -115,34 +115,11 @@
         origs = $.unique(origs);
         dests = $.unique(dests);
         causes = $.unique(causes);
+        nodes = $.unique((origs + ","+ dests).split(","));
         provinces = [];
 
 
-        $.each(origs, function(i, source){
-
-            amount = 0 ;
-            imports = [];
-            $.each(items, function(i, item){
-                if (item.orig.trim().toUpperCase() === source) {
-                    amount -= item.amount;
-                    imports.push(item.dest.trim().toUpperCase());
-                }
-                if (item.dest.trim().toUpperCase() === source) {
-                    amount += item.amount;
-                }
-
-            });
-
-            provinces.push({
-                'name': source,
-                'size': amount,
-                'imports': $.unique(imports)
-            });
-
-
-        });
-
-        $.each(dests, function(i, source){
+        $.each(nodes, function(i, source){
 
             amount = 0 ;
             imports = [];
