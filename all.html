@@ -204,6 +204,7 @@
                     + "translate(" + (innerRadius + 26) + ")"
                     + (d.angle > Math.PI ? "rotate(180)" : "");
             })
+            .style("font-size", "16")
             .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
             .text(function(d) { return fistLetterUpper(nameByIndex.get(d.index)); });
 
