@@ -239,7 +239,7 @@
                 var num = new Number(amount.toString());
                 var percentage = ((num/total)*100).toFixed(2) + '%';
                 num = (num * 100).toFixed(2);
-                return fistLetterUpper(provinces[d.source.index].name) + " -> " + fistLetterUpper(provinces[d.target.index].name) + ": " + num + "万元，占"+percentage;
+                return fistLetterUpper(provinces[d.source.index].name) + " -> " + fistLetterUpper(provinces[d.target.index].name) + ": " + num + "万元，占赈灾捐赠总额的"+percentage;
             });
 
         function mouseover(d, i) {

@@ -52,7 +52,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="../assets/js/colorbrewer.js"></script>
 <script src="../assets/js/sortprovinces.js"></script>
-<div id="title"  align="center" >健康</div>
+<div id="title"  align="center" >公共卫生</div>
 <div id="chart"  align="center" ></div>
 <div id="logo"><a href="../health.html">English</a> &nbsp;&nbsp; 简体中文<img src="../assets/ash-logo.png"/>
 </div>
@@ -239,7 +239,7 @@
                 var num = new Number(amount.toString());
                 var percentage = ((num/total)*100).toFixed(2) + '%';
                 num = (num * 100).toFixed(2);
-                return fistLetterUpper(provinces[d.source.index].name) + " -> " + fistLetterUpper(provinces[d.target.index].name) + ": " + num + "万元，占"+percentage;
+                return fistLetterUpper(provinces[d.source.index].name) + " -> " + fistLetterUpper(provinces[d.target.index].name) + ": " + num + "万元，占公共卫生捐赠总额的"+percentage;
             });
 
         function mouseover(d, i) {
