@@ -797,7 +797,7 @@
     "month": 5,
     "date": 28,
     "orig": "Beijing",
-    "dest": "Wuhan",
+    "dest": "Hubei",
     "cause": "Education"
   },
   {
@@ -1031,7 +1031,7 @@
     "month": 12,
     "date": "",
     "orig": "Beijing",
-    "dest": "Hongkong",
+    "dest": "Hong Kong",
     "cause": "Unspecified"
   },
   {
@@ -1121,7 +1121,7 @@
     "month": 5,
     "date": 22,
     "orig": "Guangdong",
-    "dest": "Worldwide",
+    "dest": "International",
     "cause": "Education"
   },
   {
@@ -1130,7 +1130,7 @@
     "month": 3,
     "date": 12,
     "orig": "Guangdong",
-    "dest": "California",
+    "dest": "International",
     "cause": "Education"
   },
   {
@@ -2318,7 +2318,7 @@
     "month": 9,
     "date": 8,
     "orig": "Hong Kong",
-    "dest": "Unspecified",
+    "dest": "International",
     "cause": "Education"
   },
   {
@@ -3038,7 +3038,7 @@
     "month": 8,
     "date": 26,
     "orig": "Jiangsu",
-    "dest": "Italy",
+    "dest": "International",
     "cause": "Disaster Relief"
   },
   {
@@ -3272,7 +3272,7 @@
     "month": 5,
     "date": 10,
     "orig": "Jiangsu",
-    "dest": "Unspecified",
+    "dest": "International",
     "cause": "Social Welfare & Poverty Alleviation"
   },
   {
@@ -3281,7 +3281,7 @@
     "month": 12,
     "date": 26,
     "orig": "Jiangsu",
-    "dest": "Unspecified",
+    "dest": "International",
     "cause": "Social Welfare & Poverty Alleviation"
   },
   {
@@ -3299,7 +3299,7 @@
     "month": 3,
     "date": 9,
     "orig": "Jiangsu",
-    "dest": "Nepal",
+    "dest": "International",
     "cause": "Social Welfare & Poverty Alleviation"
   },
   {
@@ -3640,7 +3640,7 @@
     "amount": 2,
     "month": 11,
     "date": 9,
-    "orig": "Tianjing",
+    "orig": "Tianjin",
     "dest": "Sichuan",
     "cause": "Public Health"
   },
@@ -3866,7 +3866,7 @@
     "month": 9,
     "date": 26,
     "orig": "Zhejiang",
-    "dest": "New York",
+    "dest": "International",
     "cause": "Unspecified"
   },
   {

@@ -473,7 +473,7 @@
     "month": 5,
     "date": 28,
     "orig": "Beijing",
-    "dest": "Wuhan",
+    "dest": "Hubei",
     "cause": "Education"
   },
   {
@@ -527,7 +527,7 @@
     "month": 5,
     "date": 22,
     "orig": "Guangdong",
-    "dest": "Worldwide",
+    "dest": "International",
     "cause": "Education"
   },
   {
@@ -536,7 +536,7 @@
     "month": 3,
     "date": 12,
     "orig": "Guangdong",
-    "dest": "California",
+    "dest": "International",
     "cause": "Education"
   },
   {
@@ -770,7 +770,7 @@
     "month": 9,
     "date": 8,
     "orig": "Hong Kong",
-    "dest": "Unspecified",
+    "dest": "International",
     "cause": "Education"
   },
   {

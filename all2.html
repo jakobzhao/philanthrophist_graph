@@ -220,11 +220,11 @@
             });}
 
         function mouseout(d, i) {
-
-            chords.classed("fade", false);
-
+            var m = d3.mouse(this);
+            if (Math.sqrt(Math.pow(m[0],2) + Math.pow(m[1],2)) > innerRadius + 20){
+              chords.classed("fade", false);
+            }
         }
-
     });
 
     d3.select(self.frameElement).style("height", outerRadius * 2 + "px");
