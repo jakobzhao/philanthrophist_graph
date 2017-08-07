@@ -27,7 +27,7 @@ function reprovinces(provinces) {
   for (key in regions_list) {
     var n = 0;
     for (idx in regions_list[key]){
-      var province = regions_list[key][idx]
+      var province = regions_list[key][idx];
       for (i in provinces) {
         if (province.toUpperCase() == provinces[i]['name'].toUpperCase()) {
           pro.push(provinces[i]);

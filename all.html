@@ -120,12 +120,15 @@
 
         });
 
-        origs = $.unique(origs);
-        dests = $.unique(dests);
-        causes = $.unique(causes);
-        nodes = $.unique((origs + ","+ dests).split(","));
+        // origs = $.unique(origs);
+        // dests = $.unique(dests);
+        origs = Array.from(new Set(origs));
+        dests = Array.from(new Set(dests));
+        // causes = $.unique(causes);
+        // nodes = $.unique((origs + ","+ dests).split(","));
+        causes = Array.from(new Set(causes));
+        nodes = Array.from(new Set((origs + ","+ dests).split(",")));
         provinces = [];
-
 
         $.each(nodes, function(i, source){
 
@@ -141,17 +144,18 @@
                 }
 
             });
+
             if (amount == 0 ) {amount = 100 ;}
             provinces.push({
                 'name': source,
                 'size': amount,
-                'imports': $.unique(imports)
+                'imports': Array.from(new Set(imports))
             });
 
-
         });
-
+        // console.log(provinces.length);
         provinces = reprovinces(provinces)
+
 
         // Compute a unique index for each package name.
         provinces.forEach(function(d) {
@@ -181,6 +185,7 @@
             matrix[parseInt(orig_id)][parseInt(dest_id)]+= amount;
           }
         });
+
 
         chord.matrix(matrix);
 
