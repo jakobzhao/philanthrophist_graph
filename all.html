@@ -119,15 +119,26 @@
             }
 
         });
+        function unique(arr) {
+        var result = [], hash = {};
+        for (var i = 0, elem; (elem = arr[i]) != null; i++) {
+            if (!hash[elem]) {
+                result.push(elem);
+                hash[elem] = true;
+            }
+        }
+        return result;
 
-        // origs = $.unique(origs);
-        // dests = $.unique(dests);
-        origs = Array.from(new Set(origs));
-        dests = Array.from(new Set(dests));
-        // causes = $.unique(causes);
-        // nodes = $.unique((origs + ","+ dests).split(","));
-        causes = Array.from(new Set(causes));
-        nodes = Array.from(new Set((origs + ","+ dests).split(",")));
+        }
+
+        origs = unique(origs);
+        dests = unique(dests);
+        // origs = Array.from(new Set(origs));
+        // dests = Array.from(new Set(dests));
+        causes = unique(causes);
+        nodes = unique((origs + ","+ dests).split(","));
+        // causes = Array.from(new Set(causes));
+        // nodes = Array.from(new Set((origs + ","+ dests).split(",")));
         provinces = [];
 
         $.each(nodes, function(i, source){
