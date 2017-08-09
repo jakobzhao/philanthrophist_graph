@@ -52,11 +52,11 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- <script src="assets/js/colorbrewer.js"></script>
 <script src="assets/js/sortprovinces.js"></script> -->
-<div id="title"  align="center" >All</div>
+<!-- <div id="title"  align="center" >All</div> -->
 <div id="chart"  align="center" ></div>
-<div id="logo">English &nbsp;&nbsp; <a href="zh/all.html">简体中文</a><img src="assets/ash-logo.png"/>
+<!-- <div id="logo">English &nbsp;&nbsp; <a href="zh/all.html">简体中文</a><img src="assets/ash-logo.png"/>
 </div>
-<div id="tos"> &copy; 2017 This graph is made by <a href="ceoas.oregonstate.edu/profile/zhao/" target="_blank">Bo Zhao</a> from Oregon State University.</div>
+<div id="tos"> &copy; 2017 This graph is made by <a href="ceoas.oregonstate.edu/profile/zhao/" target="_blank">Bo Zhao</a> from Oregon State University.</div> -->
 
 <script>
 // This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).
@@ -440,7 +440,7 @@ function reprovinces(provinces) {
         .append("g")
         .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-    d3.json("assets/all.json", function(error, items) {
+    d3.json("../assets/all.json", function(error, items) {
         if (error) throw error;
 
         var indexByName = d3.map(),
