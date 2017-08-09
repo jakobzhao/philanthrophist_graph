@@ -494,14 +494,14 @@ function unique(arr) {
 
         });
 
-        origs = unique(origs);
-        dests = unique(dests);
-        // origs = Array.from(new Set(origs));
-        // dests = Array.from(new Set(dests));
-        causes = unique(causes);
-        nodes = unique((origs + ","+ dests).split(","));
-        // causes = Array.from(new Set(causes));
-        // nodes = Array.from(new Set((origs + ","+ dests).split(",")));
+        // origs = unique(origs);
+        // dests = unique(dests);
+        // causes = unique(causes);
+        // nodes = unique((origs + ","+ dests).split(","));
+        origs = Array.from(new Set(origs));
+        dests = Array.from(new Set(dests));
+        causes = Array.from(new Set(causes));
+        nodes = Array.from(new Set((origs + ","+ dests).split(",")));
         provinces = [];
 
         $.each(nodes, function(i, source){
@@ -523,8 +523,8 @@ function unique(arr) {
             provinces.push({
                 'name': source,
                 'size': amount,
-                // 'imports': Array.from(new Set(imports))
-                'imports': unique(imports)
+                'imports': Array.from(new Set(imports))
+                // 'imports': unique(imports)
             });
 
         });
