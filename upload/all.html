@@ -408,6 +408,30 @@ function reprovinces(provinces) {
   // colors_list = colors_list.concat(colorbrewer.Greys[provinces.length].reverse());
   return pro;
 }
+var indexOf = [].indexOf ?
+    function (item, arr) {
+        return arr.indexOf(item)
+    } :
+    function (item, arr) { ////IE6-8 不存在 indexOf 方法
+        for (var i = 0,len = arr.length; i<len; i++ ) {
+            if (arr[i] === item) {
+                return i
+            } else {
+                return -1
+            }
+        }
+    }
+
+function unique(arr) {
+    var ret = []
+    for (var i = 0,len = arr.length; i<len; i++) {
+        var item = arr[i]
+        if (indexOf(item, ret) === -1) { //ret 中不存在 item
+            ret.push(item)
+        }
+    }
+    return ret
+}
 
     var total = 0;
 
@@ -469,17 +493,6 @@ function reprovinces(provinces) {
             }
 
         });
-        function unique(arr) {
-        var result = [], hash = {};
-        for (var i = 0, elem; (elem = arr[i]) != null; i++) {
-            if (!hash[elem]) {
-                result.push(elem);
-                hash[elem] = true;
-            }
-        }
-        return result;
-
-        }
 
         origs = unique(origs);
         dests = unique(dests);
@@ -510,7 +523,8 @@ function reprovinces(provinces) {
             provinces.push({
                 'name': source,
                 'size': amount,
-                'imports': Array.from(new Set(imports))
+                // 'imports': Array.from(new Set(imports))
+                'imports': unique(imports)
             });
 
         });
