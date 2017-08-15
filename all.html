@@ -19,8 +19,12 @@
     svg {
         pointer-events: all;
     }
+    #circle circle {
+      fill: none;
+      pointer-events: all;
+    }
 
-    path.fade {
+    #circle:hover path.fade {
         display: none;
     }
 
@@ -425,7 +429,7 @@ function reprovinces(provinces) {
 
     // var fill = d3.scale.category20c();
 
-    var chord = d3.layout.chord()
+    var path = d3.layout.chord()
         .padding(.04)
         .sortSubgroups(d3.descending)
         .sortChords(d3.descending);
@@ -548,14 +552,15 @@ function reprovinces(provinces) {
         });
 
 
-        chord.matrix(matrix);
+        path.matrix(matrix);
 
         var g = svg.selectAll(".group")
-            .data(chord.groups)
+            .data(path.groups)
             .enter().append("g")
             .attr("class", "group")
-            .on("mouseover", mouseover)
-            .on("mouseout", mouseout);
+            .attr('id', 'circle')
+            .on("mouseover", mouseover);
+            // .on("mouseout", mouseout);
 
         g.append("path")
             .style("fill", function(d) { return fill(d.index); })
@@ -574,8 +579,8 @@ function reprovinces(provinces) {
             .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
             .text(function(d) { return fistLetterUpper(nameByIndex.get(d.index)); });
 
-        var chords = svg.selectAll(".chord")
-            .data(chord.chords)
+        var chord = svg.selectAll(".chord")
+            .data(path.chords)
             .enter().append("path")
             .attr("class", "chord")
             .style("stroke", function(d) { return d3.rgb(fill(d.source.index)).darker(); })
@@ -583,7 +588,7 @@ function reprovinces(provinces) {
             .attr("d", d3.svg.chord().radius(innerRadius));
 
 
-        chords.append("title")
+        chord.append("title")
             .text(function(d) {
                 amount = 0;
                 $.each(items, function(i, item){
@@ -601,16 +606,23 @@ function reprovinces(provinces) {
                 return fistLetterUpper(provinces[d.source.index].name) + " -> " + fistLetterUpper(provinces[d.target.index].name) + ": $" + num + " million, "+percentage+" of all donations";
             });
 
+        // function mouseover(d, i) {
+        //     chords.classed("fade", function(p) {
+        //         return p.source.index !== i
+        //             && p.target.index !== i;
+        //     });}
+
         function mouseover(d, i) {
-            chords.classed("fade", function(p) {
-                return p.source.index !== i
-                    && p.target.index !== i;
-            });}
+          chord.classed("fade", function(p) {
+            return p.source.index != i
+                && p.target.index != i;
+          });
+        }
 
         function mouseout(d, i) {
           var m = d3.mouse(this);
           if (Math.sqrt(Math.pow(m[0],2) + Math.pow(m[1],2)) > innerRadius + 20){
-            chords.classed("fade", false);
+            chord.classed("fade", false);
           }
         }
 
