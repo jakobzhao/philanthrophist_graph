@@ -188,8 +188,8 @@
             .data(chord.groups)
             .enter().append("g")
             .attr("class", "group")
-            .on("mouseover", mouseover)
-            .on("mouseout", mouseout);
+            .on("mouseover", mouseover);
+            // .on("mouseout", mouseout);
 
         g.append("path")
             .style("fill", function(d) { return fill(d.index); })

@@ -1,0 +1,236 @@
+[
+  {
+    "id": 93,
+    "amount": 3,
+    "month": 11,
+    "date": 9,
+    "orig": "Beijing",
+    "dest": "Hubei",
+    "cause": "Public Health"
+  },
+  {
+    "id": 94,
+    "amount": 0.3737,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 95,
+    "amount": 0.37043,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 96,
+    "amount": 0.36135,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 97,
+    "amount": 0.327545,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 98,
+    "amount": 0.20665,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 99,
+    "amount": 0.16559,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 100,
+    "amount": 0.1347,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 101,
+    "amount": 0.12505,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 102,
+    "amount": 0.034634333,
+    "month": 12,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 103,
+    "amount": 30,
+    "month": 12,
+    "date": 22,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 104,
+    "amount": 2,
+    "month": 3,
+    "date": "",
+    "orig": "Beijing",
+    "dest": "Jiangsu",
+    "cause": "Public Health"
+  },
+  {
+    "id": 105,
+    "amount": 1,
+    "month": 10,
+    "date": "",
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 106,
+    "amount": 0.1,
+    "month": 11,
+    "date": "",
+    "orig": "Beijing",
+    "dest": "Jilin",
+    "cause": "Public Health"
+  },
+  {
+    "id": 107,
+    "amount": 16,
+    "month": 10,
+    "date": 17,
+    "orig": "Beijing",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 148,
+    "amount": 13870,
+    "month": 4,
+    "date": 19,
+    "orig": "Guangdong",
+    "dest": "Guangdong",
+    "cause": "Public Health"
+  },
+  {
+    "id": 149,
+    "amount": "",
+    "month": 10,
+    "date": 15,
+    "orig": "Guangdong",
+    "dest": "Guangdong",
+    "cause": "Public Health"
+  },
+  {
+    "id": 248,
+    "amount": 10,
+    "month": 2,
+    "date": 27,
+    "orig": "Hebei",
+    "dest": "Beijing",
+    "cause": "Public Health"
+  },
+  {
+    "id": 265,
+    "amount": 1,
+    "month": 3,
+    "date": 4,
+    "orig": "Hubei",
+    "dest": "Hubei",
+    "cause": "Public Health"
+  },
+  {
+    "id": 334,
+    "amount": 20,
+    "month": 12,
+    "date": 17,
+    "orig": "Hunan",
+    "dest": "Hunan",
+    "cause": "Public Health"
+  },
+  {
+    "id": 335,
+    "amount": 1,
+    "month": 7,
+    "date": 31,
+    "orig": "Hunan",
+    "dest": "Anhui",
+    "cause": "Public Health"
+  },
+  {
+    "id": 354,
+    "amount": 500,
+    "month": 2,
+    "date": 29,
+    "orig": "Jiangsu",
+    "dest": "Jiangsu",
+    "cause": "Public Health"
+  },
+  {
+    "id": 355,
+    "amount": 1,
+    "month": 1,
+    "date": 20,
+    "orig": "Jiangsu",
+    "dest": "Jiangsu",
+    "cause": "Public Health"
+  },
+  {
+    "id": 388,
+    "amount": 3.333333333,
+    "month": 2,
+    "date": 14,
+    "orig": "Shanghai",
+    "dest": "Shanghai",
+    "cause": "Public Health"
+  },
+  {
+    "id": 405,
+    "amount": 2,
+    "month": 11,
+    "date": 9,
+    "orig": "Tianjin",
+    "dest": "Sichuan",
+    "cause": "Public Health"
+  },
+  {
+    "id": 434,
+    "amount": 10,
+    "month": 12,
+    "date": 14,
+    "orig": "",
+    "dest": "Shanghai",
+    "cause": "Public Health"
+  }
+]

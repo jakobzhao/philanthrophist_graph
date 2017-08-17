@@ -28,6 +28,7 @@
         display: none;
     }
 
+
     #title {
         font-size: 20px;
         margin-top: 30px;
@@ -427,32 +428,21 @@ function reprovinces(provinces) {
         innerRadius = outerRadius * 0.68 ;
 
     // var fill = d3.scale.category20c();
+
+    var path = d3.layout.chord()
+        .padding(.04)
+        .sortSubgroups(d3.descending)
+        .sortChords(d3.descending);
+
     var arc = d3.svg.arc()
         .innerRadius(innerRadius)
         .outerRadius(innerRadius + 20);
-
-    // var path = d3.layout.chord()
-    //     .padding(.04)
-    //     .sortSubgroups(d3.descending)
-    //     .sortChords(d3.descending);
-    var layout = d3.layout.chord()
-            .padding(.04)
-            .sortSubgroups(d3.descending)
-            .sortChords(d3.ascending);
-
-    var path = d3.svg.chord()
-            .radius(innerRadius);
-
 
     var svg = d3.select("#chart").append("svg")
         .attr("width", outerRadius * 2)
         .attr("height", outerRadius * 2)
         .append("g")
-        .attr('id', 'circle')
         .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
-
-    svg.append("circle")
-        .attr("r", innerRadius*1.09);
 
     d3.json("assets/all.json", function(error, items) {
         if (error) throw error;
@@ -562,16 +552,17 @@ function reprovinces(provinces) {
         });
 
 
-        layout.matrix(matrix);
+        path.matrix(matrix);
 
         var g = svg.selectAll(".group")
-            .data(layout.groups)
+            .data(path.groups)
             .enter().append("g")
             .attr("class", "group")
+            .attr('id', 'circle')
             .on("mouseover", mouseover);
             // .on("mouseout", mouseout);
 
-        var groupPath = g.append("path")
+        g.append("path")
             .style("fill", function(d) { return fill(d.index); })
             .style("stroke", function(d) { return fill(d.index); })
             .attr("d", arc);
@@ -589,7 +580,7 @@ function reprovinces(provinces) {
             .text(function(d) { return fistLetterUpper(nameByIndex.get(d.index)); });
 
         var chord = svg.selectAll(".chord")
-            .data(layout.chords)
+            .data(path.chords)
             .enter().append("path")
             .attr("class", "chord")
             .style("stroke", function(d) { return d3.rgb(fill(d.source.index)).darker(); })
@@ -626,6 +617,13 @@ function reprovinces(provinces) {
             return p.source.index != i
                 && p.target.index != i;
           });
+        }
+
+        function mouseout(d, i) {
+          var m = d3.mouse(this);
+          if (Math.sqrt(Math.pow(m[0],2) + Math.pow(m[1],2)) > innerRadius + 20){
+            chord.classed("fade", false);
+          }
         }
 
     });
